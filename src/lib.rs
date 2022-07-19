@@ -1,6 +1,5 @@
-use wasm_bindgen::prelude::*;
+use wasm_bindgen::{prelude::wasm_bindgen, JsValue};
 
-// Called when the wasm module is instantiated
 #[wasm_bindgen]
 pub fn tada() -> Result<(), JsValue> {
     // Use `web_sys`'s global `window` function to get a handle on the global
@@ -14,7 +13,7 @@ pub fn tada() -> Result<(), JsValue> {
     // Manufacture the element we're gonna append
     // let val = document.create_element("p")?;
     // val.set_inner_html("Hello from Rust!");
-    let text_node = document.create_text_node("Hello from Rust!!!");
+    let text_node = document.create_text_node("Hello From Rust!!!");
 
     body.append_child(&text_node)?;
 
